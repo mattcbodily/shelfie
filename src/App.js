@@ -27,9 +27,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Dashboard inventory = {this.state.inventory}/>
-        <Form getList = {this.componentDidMount}/>
         <Header />
+        <Dashboard inventory = {this.state.inventory}
+                   getList = {this.componentDidMount}/>
+        <Form getList = {this.componentDidMount}/>
       </div>
     );
   }

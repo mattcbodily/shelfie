@@ -43,8 +43,7 @@ class Form extends Component {
 
     render(){
         return(
-            <div>
-                <h5>Form</h5>
+            <div className = "Formbox">
                 <input onChange = {(e) => this.handleImgInput(e.target.value)}
                        value = {this.state.img}/>
                 <input onChange = {(e) => this.handleNameInput(e.target.value)}

@@ -15,6 +15,10 @@ app.get('/api/inventory', ctrl.getInventory)
 
 app.post(`/api/product`, ctrl.createInventory)
 
+app.put(`/api/product/:id`, ctrl.updateInventory)
+
+app.delete('/api/product/:id', ctrl.deleteInventory)
+
 const port = process.env.SERVER_PORT;
 app.listen(port, () => {
     console.log(`Simulating on port ${port}`)

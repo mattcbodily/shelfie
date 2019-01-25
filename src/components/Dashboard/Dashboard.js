@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import Product from '../Product/Product';
+import axios from 'axios';
 
 class Dashboard extends Component {
+    
+    handleDelete(id){
+        axios.delete(`/api/product/${id}`)
+        .then(response => {
+            this.props.getList(response.data)
+        })
+    }
+
     render(){
         const mappedInventory = this.props.inventory.map((inventoryObj) => {
             return(
                 <Product key = {inventoryObj.index} 
                          newInventory = {inventoryObj}
-                         index = {inventoryObj.index}/>
+                         id = {inventoryObj.index}
+                         delete = {this.handleDelete}/>
             )
         })
         return(
-            <div>
-                <h3>Dashboard</h3>
+            <div className = "Listboxes">
                 {mappedInventory}
             </div>
         )
