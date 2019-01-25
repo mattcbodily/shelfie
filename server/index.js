@@ -13,7 +13,9 @@ massive(process.env.CONNECTION_STRING)
 
 app.get('/api/inventory', ctrl.getInventory)
 
+app.post(`/api/product`, ctrl.createInventory)
 
-app.listen(4000, () => {
-    console.log(`Simulating on port 4000`)
+const port = process.env.SERVER_PORT;
+app.listen(port, () => {
+    console.log(`Simulating on port ${port}`)
 })

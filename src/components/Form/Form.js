@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Form extends Component {
     constructor(){
@@ -6,7 +7,7 @@ class Form extends Component {
         this.state = {
             name: '',
             price: 0,
-            imgurl: ''
+            img: ''
         }
     }
 
@@ -19,13 +20,25 @@ class Form extends Component {
     }
 
     handleImgInput(val){
-        this.setState({imgurl: val})
+        this.setState({img: val})
     }
 
     handleClearInput(){
         this.setState({name: ''})
         this.setState({price: 0})
-        this.setState({imgurl: ''})
+        this.setState({img: ''})
+    }
+
+    handleCreateInventory(){
+        const newInv = {
+            name: this.state.name,
+            price: this.state.price,
+            img: this.state.img
+        }
+        axios.post('/api/product', newInv)
+        .then(response => {
+            
+        })
     }
 
     render(){
