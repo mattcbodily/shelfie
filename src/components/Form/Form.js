@@ -37,7 +37,7 @@ class Form extends Component {
         }
         axios.post('/api/product', newInv)
         .then(response => {
-            
+            this.props.getList(response.data)
         })
     }
 
@@ -46,13 +46,13 @@ class Form extends Component {
             <div>
                 <h5>Form</h5>
                 <input onChange = {(e) => this.handleImgInput(e.target.value)}
-                       value = {this.state.imgurl}/>
+                       value = {this.state.img}/>
                 <input onChange = {(e) => this.handleNameInput(e.target.value)}
                        value = {this.state.name}/>
                 <input onChange = {(e) => this.handlePriceInput(e.target.value)}
                        value = {this.state.price}/>
                 <button onClick = {() => this.handleClearInput()}>Cancel</button>
-                <button>Add to Inventory</button>
+                <button onClick = {() => this.handleCreateInventory()}>Add to Inventory</button>
             </div>
         )
     }
