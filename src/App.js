@@ -32,7 +32,7 @@ class App extends Component {
           <Dashboard id = {this.state.inventory.id}
                    inventory = {this.state.inventory}
                    getList = {this.componentDidMount}/>
-        <Form getList = {this.componentDidMount}/>
+          <Form getList = {this.componentDidMount}/>
         </nav>
       </div>
     );
