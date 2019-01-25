@@ -2,7 +2,11 @@ import React from 'react';
 
 const Product = function(props){
     return(
-        <div>Product</div>
+        <div>
+            {props.newInventory.imgurl}
+            {props.newInventory.name}
+            {props.newInventory.price}
+        </div>
     )
 }
 
