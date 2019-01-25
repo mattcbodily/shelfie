@@ -3,7 +3,7 @@ import Product from '../Product/Product';
 import axios from 'axios';
 
 class Dashboard extends Component {
-    
+
     handleDelete(id){
         axios.delete(`/api/product/${id}`)
         .then(response => {

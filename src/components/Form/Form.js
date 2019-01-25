@@ -44,10 +44,13 @@ class Form extends Component {
     render(){
         return(
             <div className = "Formbox">
+                <p>Image URL:</p>
                 <input onChange = {(e) => this.handleImgInput(e.target.value)}
                        value = {this.state.img}/>
+                <p>Product Name:</p>
                 <input onChange = {(e) => this.handleNameInput(e.target.value)}
                        value = {this.state.name}/>
+                <p>Price:</p>
                 <input onChange = {(e) => this.handlePriceInput(e.target.value)}
                        value = {this.state.price}/>
                 <button onClick = {() => this.handleClearInput()}>Cancel</button>
