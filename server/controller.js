@@ -23,7 +23,6 @@ module.exports = {
 
     deleteInventory: (req, res, next) => {
         const{params} = req;
-
         req.app.get('db').delete_product(params.id)
         .then(product => res.status(200).send(product))
         .catch(err => res.status(500).send({errorMessage: 'Error'}, console.log(err)))

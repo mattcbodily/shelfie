@@ -3,6 +3,10 @@ import Product from '../Product/Product';
 import axios from 'axios';
 
 class Dashboard extends Component {
+    constructor(){
+        super();
+        this.handleDelete = this.handleDelete.bind(this)
+    }
 
     handleDelete(id){
         axios.delete(`/api/product/${id}`)
@@ -13,10 +17,11 @@ class Dashboard extends Component {
 
     render(){
         const mappedInventory = this.props.inventory.map((inventoryObj) => {
+            console.log(inventoryObj)
             return(
                 <Product key = {inventoryObj.index} 
                          newInventory = {inventoryObj}
-                         id = {inventoryObj.index}
+                         id = {inventoryObj.id}
                          delete = {this.handleDelete}/>
             )
         })

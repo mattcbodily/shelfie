@@ -19,7 +19,7 @@ app.put(`/api/product/:id`, ctrl.updateInventory)
 
 app.delete('/api/product/:id', ctrl.deleteInventory)
 
-const port = process.env.SERVER_PORT;
-app.listen(port, () => {
-    console.log(`Simulating on port ${port}`)
+const PORT = process.env.SERVER_PORT;
+app.listen(PORT, () => {
+    console.log(`Simulating on port ${PORT}`)
 })
